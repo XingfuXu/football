@@ -8,10 +8,7 @@ Description: This package gets the football data of football teams in England. S
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    RCurl,
-    rjson,
-    openssl,rvest,dplyr,httr,stringr
+Imports: RCurl, rjson, openssl,rvest,dplyr,httr,stringr
 RoxygenNote: 6.1.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
