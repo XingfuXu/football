@@ -4,8 +4,7 @@ Title: Data Analysis of Football Teams from England
 Version: 0.1.0
 Author@R: Xingfu Xu
 Maintainer: person("Xingfu Xu", email = "xuxingfu0@gmail.com", role=c("author"))
-Description: This package gets the football data of football teams in England. 
-Some amount of summary statistics and graphical visualizations are also provided in this package. 
+Description: This package gets the football data of football teams in England. Some amount of summary statistics and graphical visualizations are also provided in this package. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
