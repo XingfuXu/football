@@ -2,8 +2,8 @@ Package: football
 Type: Package
 Title: Data Analysis of Football Teams from England
 Version: 0.1.0
-Author: XXX
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Xingfu Xu
+Maintainer: person("Xingfu Xu", email = "xuxingfu0@gmail.com")
 Description: This package gets the football data of football teams in England. Some amount of summary statistics and graphical visualizations are also provided in this package. 
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -14,4 +14,3 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-VignetteBuilder: knitr
