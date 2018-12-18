@@ -1,0 +1,113 @@
+---
+title: "Data Analysis of Football Teams from England"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Data Analysis of Football Teams from England
+
+## **Description**
+
+    This package gets the football data of football teams in England. Some amount of summary statistics and graphical visualizations are also provided in this package.　
+
+
+## **read_html_team** 
+
+#### Description 
+  The function gets the basic information of a football team from England.The data is got from https://m.qtx.com/dbsoccer/stading_92_2018.html using web sraping.
+The baisc information includes country, home, city and fundation time.  
+
+#### Paramamters 
+**teams**　　the team names of given teams  
+**all**　　　If all is true, it will return the basic information of all.The default value
+of all is FALSE.  
+
+#### **Return**
+The basic information of football teams, including country, home, city and fundation time.  
+
+#### **Examples**
+\# Example 1: Get the basic information of Liverpool, Chelsea  
+info_sample <- read_html_team(teams = c("Liverpool", "Chelsea"))  
+print(info_sample)
+\# Example 2: Get the basic information of all football teams from England  
+info_all <- read_html_team(all = TRUE)  
+print(info_all)  
+
+
+
+## **read_api_team**
+
+### **Description**
+    The function returns the team performance of football teams in England using API collection. The data is from https://api.football-data.org/v2/teams/86/matches?status=SCHEDULED.
+Given specific team names, it will return the performance of these teams.  
+
+### **Parameters**
+**teams**　　　the team names of given teams 
+**all**　　　　If all is true, it will return the basic information of all.
+The default value of all is FALSE. 
+
+### **Examples**
+
+\# Example 1: Get the team performance of Liverpool, Chelsea  
+\# perfrm_sample <- read_api_team(teams = c("Liverpool", "Chelsea"))  
+\# print(perfrm_sample)  
+\# Example 2: Get the team performance of all football teams from England  
+\# perfrm_all <- read_api_team(all = TRUE)  
+\# print(perfrm_all)
+
+
+## **summary_football**
+
+### **Description** 
+  This function returns the basic statistics of football team's performance variables.  
+### **Parameters**
+
+**data**　　　　　the data set of merged data　
+**teams**　　　　the team names of given teams  　
+**perfrm_vars**　the performance variables  
+**all**　　　　　If all is true, it will give the summary statistics of all teams.
+The default value of all is FALSE.  
+
+### **Return**
+  The basic statistics of football team Performance  
+
+### **Examples**
+
+\# Example get the summary statistics of points, won, and loss of all teams
+summary_football(data = football.teams, perfrm_vars = c("points", "won", "loss"), all = TRUE)
+
+
+
+
+## **plot_performance**
+
+### **Description**
+    This function plots the team performance of different teams from England.  
+
+### **Parameters**
+**data**　　　　　the data set of merged data  
+**teams**　　　　the team names of given teams  
+**perfrm_vars**　the performance variables that want to compare  
+**all**　　　　　If all is true, it will give the performance comparison of all teams.
+The default value of all is FALSE.
+
+### **Examples**
+
+\# Example: Graph the Performance of Different Teams  
+data("football.teams")
+teams <- c("Liverpool", "Chelsea", "Arsenal", "Chelsea", "everton", "fulham")
+plot_performance(football.teams, teams, perfrm_vars = c("points", "won", "loss"))
+
+
